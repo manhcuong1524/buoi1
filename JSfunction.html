@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p>Click the button to check where if the string includes the specified value.</p>
+<b>Hello world, welcome to the universe.</b><br><br>
+<button onclick="myFunction()">Try it</button>
+
+<p id="demo"></p>
+<hr>
+<h2>Create JSON string from a JavaScript object.</h2>
+
+<p id="demo1"></p>
+<hr>
+<p>Click the button to return the number of characters in the string "Hello World!".</p>
+<button onclick="myFunction1()">Try it</button>
+
+<p id="demo3"></p>
+<hr>
+<p>Click the button to display the array values after the split.</p>
+<b>How are you doing today?</b><br><br>
+<button onclick="myFunction2()">Try it</button>
+
+<p id="demo4"></p>
+<hr>
+<p>Click the button to return the value of the string object.</p>
+
+<button onclick="myFunction3()">Try it</button>
+
+<p id="demo5"></p>
+<hr>
+<p>Click the button to check if "fruits" is an array.</p>
+<p>fruits = ["Banana", "Orange", "Apple", "Mango"]</p>
+<button onclick="myFunction4()">Try it</button>
+
+<p id="demo6"></p>
+<hr>
+<p>Click the button to sort the array.</p>
+<p>fruits = ["Banana", "Orange", "Apple", "Mango"]</p>
+<button onclick="myFunction5()">Try it</button>
+
+<p id="demo8"></p>
+<hr>
+<p>Click the button to display the fixed number.</p>
+<p>number = 5.58889</p>
+<button onclick="myFunction6()">Try it</button>
+
+<p id="demo9"></p>
+<hr>
+<p>Get the sum of the numbers in the array.</p>
+<p>numbers = [65, 44, 12, 4]</p>
+
+<p id="demo10"></p>
+<hr>
+<p>Click the button to add a new element to the array.</p>
+
+<button onclick="myFunction9()">Try it</button>
+
+<p id="demo12"></p>
+
+<script>
+
+    /*JS functions: includes*/
+function myFunction() {
+  var str = "Hello world, welcome to the universe.";
+  var check = str.includes("world", 4);
+  document.getElementById("demo").innerHTML = check;
+}
+
+/*JS functions: JSON.stringify*/
+var obj = { "name":"Manh Cuong", "age":22, "city":"Ho Chi Minh"};
+var myJSON = JSON.stringify(obj, function (key, value) {
+  if (key == "city") {
+    return value.toUpperCase();
+  } else {
+    return value;
+  }
+});
+document.getElementById("demo1").innerHTML = myJSON;
+
+/*JS functions: length*/
+function myFunction1() {
+  var str = "Hello World!";
+  var n = str.length + " characters";
+  document.getElementById("demo3").innerHTML = n;
+}
+
+/*JS functions: split*/
+function myFunction2() {
+  var str = "How are you doing today?";
+  var res = str.split(" ", 3);
+  document.getElementById("demo4").innerHTML = res;
+}
+
+/*JS functions: toString()*/
+function myFunction3() {
+  var str = "Hello World!";
+  var res = str.toString();
+  document.getElementById("demo5").innerHTML = res;
+}
+/*JS functions: isArray()*/
+function myFunction4() {
+  var fruits = ["Banana", "Orange", "Apple", "Mango"];
+  var x = document.getElementById("demo6");
+  x.innerHTML = Array.isArray(fruits);
+}
+/*JS functions: sort()*/
+var fruits = ["Banana", "Orange", "Apple", "Mango"];
+document.getElementById("demo").innerHTML = fruits;
+
+function myFunction5() {
+  fruits.sort();
+  document.getElementById("demo8").innerHTML = fruits;
+}
+/*JS functions: toFixed()*/
+function myFunction6() {
+  var num = 5.58889;
+  var n = num.toFixed(2);
+  document.getElementById("demo9").innerHTML = n;
+}
+
+/*JS functions: forEach()*/
+var sum = 0;
+var numbers = [65, 44, 12, 4];
+numbers.forEach(myFunction8);
+
+function myFunction8(item) {
+  sum += item;
+  document.getElementById("demo10").innerHTML = "Sum = "+ sum;
+}
+
+/*JS functions: push()*/
+var fruits = ["Banana", "Orange", "Apple", "Mango"];
+document.getElementById("demo12").innerHTML = fruits;
+
+function myFunction9() {
+  fruits.push("Kiwi");
+  document.getElementById("demo12").innerHTML = fruits;
+}
+</script>
+
+</body>
+</html>

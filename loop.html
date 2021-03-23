@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <h1>Map</h1>
+    <p>Multiply every element in the array with 10:</p>
+    <p>numbers = [65, 44, 12, 4]</p>
+    <p id="demo1"></p>
+    <hr>
+    <h1>Filter</h1>
+    <p>Click the button to get every element in the array that has a value of 18 or more.</p>
+    <p>ages = [32, 33, 16, 40]</p>
+    <button onclick="myFunction2()">Try it</button>
+    <p id="demo2"></p>
+    <hr>
+    <h1>Reduce</h1>
+    <p>Click the button to get the sum of the rounded numbers in the array.</p>
+    <p>numbers = [15.5, 2.3, 1.1, 4.7]</p>
+    <button onclick="myFunction()">Try it</button>
+
+    <p>Sum of numbers in array: <span id="demo"></span></p>
+
+    <script>
+        /*Map*/
+        var numbers = [65, 44, 12, 4];
+        var newarray = numbers.map(myFunction1)
+
+        function myFunction1(num) {
+            return num * 10;
+        }
+
+        document.getElementById("demo1").innerHTML = newarray;
+
+        /*Filter*/
+        var ages = [32, 33, 16, 40];
+
+        function checkAdult(age) {
+            return age >= 18;
+        }
+
+        function myFunction2() {
+            document.getElementById("demo2").innerHTML = ages.filter(checkAdult);
+        }
+        /*Reduce*/
+        var numbers = [15.5, 2.3, 1.1, 4.7];
+
+        function getSum(total, num) {
+            return total + Math.round(num);
+        }
+        function myFunction(item) {
+            document.getElementById("demo").innerHTML = numbers.reduce(getSum, 0);
+        }
+    </script>
+
+</body>
+
+</html>
