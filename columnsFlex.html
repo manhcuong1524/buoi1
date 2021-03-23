@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+* {
+  box-sizing: border-box;
+}
+
+.flex-container {
+  display: flex;
+  flex-direction: row-reverse;
+  /*row-reverse item được sắp xếp theo chiều ngang, từ phải qua trái*/
+  font-size: 30px;
+  text-align: center;
+}
+
+.item-left {
+  background-color: #f1f1f1;
+  padding: 10px;
+  height: 100px;
+  width: 100px;
+ 
+}
+
+.item-right {
+  background-color: dodgerblue;
+  padding: 10px;
+  height: 100px;
+  width: 100px;
+}
+
+
+@media (max-width: 800px) {
+  .flex-container{
+    display: flex;
+    flex-direction: column;/*column: flex item được sắp xếp theo chiều dọc, từ trên xuống dưới */
+  }
+}
+</style>
+</head>
+<body>
+
+<div class="flex-container">
+  <div class="item-left">1</div>
+  <div class="item-right">2</div>
+</div>
+
+</body>
+</html>
